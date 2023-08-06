@@ -1,11 +1,10 @@
 // ----------------------------------------------------------------
-// From Game Programming in C++ by Sanjay Madhav
+// Based on Texture.cpp from Game Programming in C++ by Sanjay Madhav
+// This version is not using SOIL
 #include "Texture.h"
-//#include <SOIL/SOIL.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include <GL/glew.h>
-//#include <SDL/SDL.h>
 
 Texture::Texture()
 :mTextureID(0)
@@ -24,9 +23,6 @@ bool Texture::Load(const std::string& fileName)
 {
 	int channels = 0;
 	
-	//unsigned char* image = SOIL_load_image(fileName.c_str(),
-	//									   &mWidth, &mHeight, &channels, SOIL_LOAD_AUTO);
-
 	unsigned char* image = stbi_load(fileName.c_str(), &mWidth, &mHeight, &channels, 0);
 
 	if (!image)
@@ -34,12 +30,6 @@ bool Texture::Load(const std::string& fileName)
 		printf("SOIL failed to load image %s", fileName.c_str());
 		return false;
 	}
-	
-	//if (image == nullptr)
-	//{
-	//	SDL_Log("SOIL failed to load image %s: %s", fileName.c_str(), SOIL_last_result());
-	//	return false;
-	//}
 	
 	int format = GL_RGB;
 	if (channels == 4)
