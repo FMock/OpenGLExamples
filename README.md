@@ -2,10 +2,11 @@
 Modern OpenGL Example Projects
 
 # Libraries Used:
--WxWidgets - For window management<br />
--GLEW      - To simplify OpenGL calls<br />
--GLM       - For math support<br />
--SOIL2     - Image loading<br />
+-WxWidgets   - For window management<br />
+-GLEW        - To simplify OpenGL calls<br />
+-GLM         - For math support<br />
+-stb_image.h - Image loading<br />
+-SOIL2       - Image loading<br />
 
 # Notes on getting started:
 1. Clone this repo. (Your machine is expected to have a GPU that has minimum OpenGL version of 3.3)
@@ -24,7 +25,7 @@ Modern OpenGL Example Projects
 
 8. For any new projects you may create using WxWidgets, be sure to change the project linker subsystem to Windows (from Console)  
 
-9. If you're having builf issues, be sure to adjust as necessary the include paths, additional directories, and library files in the project file for the various libraries used.
+9. If you're having build issues, be sure to check and adjust as necessary the include paths, additional directories, and library files in the project file for the various libraries used.
 
 # Credits
 There are many resources to learn OpenGL. The following are some I used which collectively made the code in this repo possible.<br />
